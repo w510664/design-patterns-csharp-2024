@@ -26,9 +26,9 @@ namespace RefactoringGuru.DesignPatterns.Prototype.Conceptual
 
         public Person DeepCopy()
         {
-            Person clone = (Person) this.MemberwiseClone();
+            Person clone = (Person)this.MemberwiseClone();
             clone.IdInfo = new IdInfo(IdInfo.IdNumber);
-            clone.Name = String.Copy(Name);
+            clone.Name = new string(Name.ToCharArray());
             return clone;
         }
     }

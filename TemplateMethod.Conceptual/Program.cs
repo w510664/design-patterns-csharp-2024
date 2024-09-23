@@ -60,14 +60,14 @@ namespace RefactoringGuru.DesignPatterns.TemplateMethod.Conceptual
         {
             Console.WriteLine("AbstractClass says: But I am doing the bulk of the work anyway");
         }
-        
+
         // EN: These operations have to be implemented in subclasses.
         //
         // RU: А эти операции должны быть реализованы в подклассах.
         protected abstract void RequiredOperations1();
 
         protected abstract void RequiredOperation2();
-        
+
         // EN: These are "hooks." Subclasses may override them, but it's not
         // mandatory since the hooks already have default (but empty)
         // implementation. Hooks provide additional extension points in some
@@ -153,7 +153,7 @@ namespace RefactoringGuru.DesignPatterns.TemplateMethod.Conceptual
             Client.ClientCode(new ConcreteClass1());
 
             Console.Write("\n");
-            
+
             Console.WriteLine("Same client code can work with different subclasses:");
             Client.ClientCode(new ConcreteClass2());
         }

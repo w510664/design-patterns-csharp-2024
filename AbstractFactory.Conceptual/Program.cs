@@ -159,13 +159,13 @@ namespace RefactoringGuru.DesignPatterns.AbstractFactory.Conceptual
             return "The result of the product B2.";
         }
 
-       // EN: The variant, Product B2, is only able to work correctly with the
-       // variant, Product A2. Nevertheless, it accepts any instance of
-       // AbstractProductA as an argument.
-       //
-       // RU: Продукт B2 может корректно работать только с Продуктом A2. Тем не
-       // менее, он принимает любой экземпляр Абстрактного Продукта А в качестве
-       // аргумента.
+        // EN: The variant, Product B2, is only able to work correctly with the
+        // variant, Product A2. Nevertheless, it accepts any instance of
+        // AbstractProductA as an argument.
+        //
+        // RU: Продукт B2 может корректно работать только с Продуктом A2. Тем не
+        // менее, он принимает любой экземпляр Абстрактного Продукта А в качестве
+        // аргумента.
         public string AnotherUsefulFunctionB(IAbstractProductA collaborator)
         {
             var result = collaborator.UsefulFunctionA();

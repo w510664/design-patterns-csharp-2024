@@ -133,7 +133,7 @@ namespace RefactoringGuru.DesignPatterns.Memento.Conceptual
         {
             return this._state;
         }
-        
+
         // EN: The rest of the methods are used by the Caretaker to display
         // metadata.
         //
@@ -207,7 +207,7 @@ namespace RefactoringGuru.DesignPatterns.Memento.Conceptual
             }
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

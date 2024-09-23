@@ -139,9 +139,9 @@ namespace RefactoringGuru.DesignPatterns.Command.Conceptual
             {
                 this._onStart.Execute();
             }
-            
+
             Console.WriteLine("Invoker: ...doing something really important...");
-            
+
             Console.WriteLine("Invoker: Does anybody want something done after I finish?");
             if (this._onFinish is ICommand)
             {

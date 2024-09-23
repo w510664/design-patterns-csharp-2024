@@ -23,7 +23,7 @@ namespace RefactoringGuru.DesignPatterns.ChainOfResponsibility.Conceptual
     public interface IHandler
     {
         IHandler SetNext(IHandler handler);
-		
+
         object Handle(object request);
     }
 
@@ -39,7 +39,7 @@ namespace RefactoringGuru.DesignPatterns.ChainOfResponsibility.Conceptual
         public IHandler SetNext(IHandler handler)
         {
             this._nextHandler = handler;
-            
+
             // EN: Returning a handler from here will let us link handlers in a
             // convenient way like this:
             // monkey.SetNext(squirrel).SetNext(dog);
@@ -49,7 +49,7 @@ namespace RefactoringGuru.DesignPatterns.ChainOfResponsibility.Conceptual
             // monkey.SetNext(squirrel).SetNext(dog);
             return handler;
         }
-		
+
         public virtual object Handle(object request)
         {
             if (this._nextHandler != null)

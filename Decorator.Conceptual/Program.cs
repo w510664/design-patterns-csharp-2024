@@ -116,7 +116,7 @@ namespace RefactoringGuru.DesignPatterns.Composite.Conceptual
             return $"ConcreteDecoratorB({base.Operation()})";
         }
     }
-    
+
     public class Client
     {
         // EN: The client code works with all objects using the Component
@@ -131,7 +131,7 @@ namespace RefactoringGuru.DesignPatterns.Composite.Conceptual
             Console.WriteLine("RESULT: " + component.Operation());
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

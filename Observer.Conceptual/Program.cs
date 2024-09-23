@@ -130,7 +130,7 @@ namespace RefactoringGuru.DesignPatterns.Observer.Conceptual
     class ConcreteObserverA : IObserver
     {
         public void Update(ISubject subject)
-        {            
+        {
             if ((subject as Subject).State < 3)
             {
                 Console.WriteLine("ConcreteObserverA: Reacted to the event.");
@@ -148,7 +148,7 @@ namespace RefactoringGuru.DesignPatterns.Observer.Conceptual
             }
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

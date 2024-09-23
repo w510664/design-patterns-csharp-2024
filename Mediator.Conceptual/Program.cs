@@ -42,7 +42,7 @@ namespace RefactoringGuru.DesignPatterns.Mediator.Conceptual
             this._component1.SetMediator(this);
             this._component2 = component2;
             this._component2.SetMediator(this);
-        } 
+        }
 
         public void Notify(object sender, string ev)
         {
@@ -120,7 +120,7 @@ namespace RefactoringGuru.DesignPatterns.Mediator.Conceptual
             this._mediator.Notify(this, "D");
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

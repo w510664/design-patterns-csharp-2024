@@ -124,7 +124,7 @@ namespace RefactoringGuru.DesignPatterns.FactoryMethod.Conceptual
         {
             Console.WriteLine("App: Launched with the ConcreteCreator1.");
             ClientCode(new ConcreteCreator1());
-            
+
             Console.WriteLine("");
 
             Console.WriteLine("App: Launched with the ConcreteCreator2.");

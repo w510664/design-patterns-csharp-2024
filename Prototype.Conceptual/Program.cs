@@ -21,7 +21,7 @@ namespace RefactoringGuru.DesignPatterns.Prototype.Conceptual
 
         public Person ShallowCopy()
         {
-            return (Person) this.MemberwiseClone();
+            return (Person)this.MemberwiseClone();
         }
 
         public Person DeepCopy()

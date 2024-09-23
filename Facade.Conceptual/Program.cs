@@ -26,7 +26,7 @@ namespace RefactoringGuru.DesignPatterns.Facade.Conceptual
     public class Facade
     {
         protected Subsystem1 _subsystem1;
-		
+
         protected Subsystem2 _subsystem2;
 
         public Facade(Subsystem1 subsystem1, Subsystem2 subsystem2)
@@ -34,7 +34,7 @@ namespace RefactoringGuru.DesignPatterns.Facade.Conceptual
             this._subsystem1 = subsystem1;
             this._subsystem2 = subsystem2;
         }
-		
+
         // EN: The Facade's methods are convenient shortcuts to the
         // sophisticated functionality of the subsystems. However, clients get
         // only to a fraction of a subsystem's capabilities.
@@ -53,7 +53,7 @@ namespace RefactoringGuru.DesignPatterns.Facade.Conceptual
             return result;
         }
     }
-    
+
     // EN: The Subsystem can accept requests either from the facade or client
     // directly. In any case, to the Subsystem, the Facade is yet another
     // client, and it's not a part of the Subsystem.
@@ -73,7 +73,7 @@ namespace RefactoringGuru.DesignPatterns.Facade.Conceptual
             return "Subsystem1: Go!\n";
         }
     }
-	
+
     // EN: Some facades can work with multiple subsystems at the same time.
     //
     // RU: Некоторые фасады могут работать с разными подсистемами одновременно.
@@ -108,7 +108,7 @@ namespace RefactoringGuru.DesignPatterns.Facade.Conceptual
             Console.Write(facade.Operation());
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

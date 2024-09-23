@@ -97,7 +97,7 @@ namespace RefactoringGuru.DesignPatterns.Composite.Conceptual
     class Composite : Component
     {
         protected List<Component> _children = new List<Component>();
-        
+
         public override void Add(Component component)
         {
             this._children.Add(component);
@@ -132,7 +132,7 @@ namespace RefactoringGuru.DesignPatterns.Composite.Conceptual
                 }
                 i++;
             }
-            
+
             return result + ")";
         }
     }
@@ -164,11 +164,11 @@ namespace RefactoringGuru.DesignPatterns.Composite.Conceptual
             {
                 component1.Add(component2);
             }
-            
+
             Console.WriteLine($"RESULT: {component1.Operation()}");
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)

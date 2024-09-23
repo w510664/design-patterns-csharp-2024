@@ -23,12 +23,12 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
     public interface IBuilder
     {
         void BuildPartA();
-		
+
         void BuildPartB();
-		
+
         void BuildPartC();
     }
-    
+
     // EN: The Concrete Builder classes follow the Builder interface and provide
     // specific implementations of the building steps. Your program may have
     // several variations of Builders, implemented differently.
@@ -39,7 +39,7 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
     public class ConcreteBuilder : IBuilder
     {
         private Product _product = new Product();
-        
+
         // EN: A fresh builder instance should contain a blank product object,
         // which is used in further assembly.
         //
@@ -49,12 +49,12 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
         {
             this.Reset();
         }
-        
+
         public void Reset()
         {
             this._product = new Product();
         }
-		
+
         // EN: All production steps work with the same product instance.
         //
         // RU: Все этапы производства работают с одним и тем же экземпляром
@@ -63,17 +63,17 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
         {
             this._product.Add("PartA1");
         }
-		
+
         public void BuildPartB()
         {
             this._product.Add("PartB1");
         }
-		
+
         public void BuildPartC()
         {
             this._product.Add("PartC1");
         }
-		
+
         // EN: Concrete Builders are supposed to provide their own methods for
         // retrieving results. That's because various types of builders may
         // create entirely different products that don't follow the same
@@ -111,7 +111,7 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
             return result;
         }
     }
-    
+
     // EN: It makes sense to use the Builder pattern only when your products are
     // quite complex and require extensive configuration.
     //
@@ -129,12 +129,12 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
     public class Product
     {
         private List<object> _parts = new List<object>();
-		
+
         public void Add(string part)
         {
             this._parts.Add(part);
         }
-		
+
         public string ListParts()
         {
             string str = string.Empty;
@@ -149,7 +149,7 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
             return "Product parts: " + str + "\n";
         }
     }
-    
+
     // EN: The Director is only responsible for executing the building steps in
     // a particular sequence. It is helpful when producing products according to
     // a specific order or configuration. Strictly speaking, the Director class
@@ -163,12 +163,12 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
     public class Director
     {
         private IBuilder _builder;
-        
+
         public IBuilder Builder
         {
-            set { _builder = value; } 
+            set { _builder = value; }
         }
-        
+
         // EN: The Director can construct several product variations using the
         // same building steps.
         //
@@ -178,7 +178,7 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
         {
             this._builder.BuildPartA();
         }
-		
+
         public void BuildFullFeaturedProduct()
         {
             this._builder.BuildPartA();
@@ -201,7 +201,7 @@ namespace RefactoringGuru.DesignPatterns.Builder.Conceptual
             var director = new Director();
             var builder = new ConcreteBuilder();
             director.Builder = builder;
-            
+
             Console.WriteLine("Standard basic product:");
             director.BuildMinimalViableProduct();
             Console.WriteLine(builder.GetProduct().ListParts());

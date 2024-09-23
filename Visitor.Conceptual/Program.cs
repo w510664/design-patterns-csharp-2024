@@ -165,7 +165,7 @@ namespace RefactoringGuru.DesignPatterns.Visitor.Conceptual
 
             Console.WriteLine("The client code works with all visitors via the base Visitor interface:");
             var visitor1 = new ConcreteVisitor1();
-            Client.ClientCode(components,visitor1);
+            Client.ClientCode(components, visitor1);
 
             Console.WriteLine();
 

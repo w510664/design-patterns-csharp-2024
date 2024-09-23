@@ -10,14 +10,14 @@
 // оперативную память. Легковес экономит память, разделяя общее состояние
 // объектов между собой, вместо хранения одинаковых данных в каждом объекте.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
 // EN: Use Json.NET library, you can download it from NuGet Package Manager
 //
 // RU: Используем библиотеку Json.NET, загрузить можно через NuGet Package
 // Manager
 using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RefactoringGuru.DesignPatterns.Flyweight.Conceptual
 {
@@ -153,7 +153,8 @@ namespace RefactoringGuru.DesignPatterns.Flyweight.Conceptual
             );
             factory.listFlyweights();
 
-            addCarToPoliceDatabase(factory, new Car {
+            addCarToPoliceDatabase(factory, new Car
+            {
                 Number = "CL234IR",
                 Owner = "James Doe",
                 Company = "BMW",
@@ -161,7 +162,8 @@ namespace RefactoringGuru.DesignPatterns.Flyweight.Conceptual
                 Color = "red"
             });
 
-            addCarToPoliceDatabase(factory, new Car {
+            addCarToPoliceDatabase(factory, new Car
+            {
                 Number = "CL234IR",
                 Owner = "James Doe",
                 Company = "BMW",
@@ -176,7 +178,8 @@ namespace RefactoringGuru.DesignPatterns.Flyweight.Conceptual
         {
             Console.WriteLine("\nClient: Adding a car to database.");
 
-            var flyweight = factory.GetFlyweight(new Car {
+            var flyweight = factory.GetFlyweight(new Car
+            {
                 Color = car.Color,
                 Model = car.Model,
                 Company = car.Company

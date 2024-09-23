@@ -22,17 +22,17 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
         //
         // RU: Возвращает ключ текущего элемента
         public abstract int Key();
-		
+
         // EN: Returns the current element
         //
         // RU: Возвращает текущий элемент.
         public abstract object Current();
-		
+
         // EN: Move forward to next element
         //
         // RU: Переходит к следующему элементу.
         public abstract bool MoveNext();
-		
+
         // EN: Rewinds the Iterator to the first element
         //
         // RU: Перематывает Итератор к первому элементу.
@@ -57,7 +57,7 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
     class AlphabeticalOrderIterator : Iterator
     {
         private WordsCollection _collection;
-		
+
         // EN: Stores the current traversal position. An iterator may have a lot
         // of other fields for storing iteration state, especially when it is
         // supposed to work with a particular kind of collection.
@@ -66,7 +66,7 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
         // других полей для хранения состояния итерации, особенно когда он
         // должен работать с определённым типом коллекции.
         private int _position = -1;
-		
+
         private bool _reverse = false;
 
         public AlphabeticalOrderIterator(WordsCollection collection, bool reverse = false)
@@ -79,7 +79,7 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
                 this._position = collection.getItems().Count;
             }
         }
-		
+
         public override object Current()
         {
             return this._collection.getItems()[_position];
@@ -89,7 +89,7 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
         {
             return this._position;
         }
-		
+
         public override bool MoveNext()
         {
             int updatedPosition = this._position + (this._reverse ? -1 : 1);
@@ -104,7 +104,7 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
                 return false;
             }
         }
-		
+
         public override void Reset()
         {
             this._position = this._reverse ? this._collection.getItems().Count - 1 : 0;
@@ -119,24 +119,24 @@ namespace RefactoringGuru.DesignPatterns.Iterator.Conceptual
     class WordsCollection : IteratorAggregate
     {
         List<string> _collection = new List<string>();
-		
+
         bool _direction = false;
-        
+
         public void ReverseDirection()
         {
             _direction = !_direction;
         }
-		
+
         public List<string> getItems()
         {
             return _collection;
         }
-		
+
         public void AddItem(string item)
         {
             this._collection.Add(item);
         }
-		
+
         public override IEnumerator GetEnumerator()
         {
             return new AlphabeticalOrderIterator(this, _direction);

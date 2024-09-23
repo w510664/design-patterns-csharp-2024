@@ -36,15 +36,15 @@ namespace RefactoringGuru.DesignPatterns.Bridge.Conceptual
     class Abstraction
     {
         protected IImplementation _implementation;
-		
+
         public Abstraction(IImplementation implementation)
         {
             this._implementation = implementation;
         }
-		
+
         public virtual string Operation()
         {
-            return "Abstract: Base operation with:\n" + 
+            return "Abstract: Base operation with:\n" +
                 _implementation.OperationImplementation();
         }
     }
@@ -57,8 +57,8 @@ namespace RefactoringGuru.DesignPatterns.Bridge.Conceptual
     {
         public ExtendedAbstraction(IImplementation implementation) : base(implementation)
         {
-		}
-		
+        }
+
         public override string Operation()
         {
             return "ExtendedAbstraction: Extended operation with:\n" +
@@ -119,7 +119,7 @@ namespace RefactoringGuru.DesignPatterns.Bridge.Conceptual
             Console.Write(abstraction.Operation());
         }
     }
-    
+
     class Program
     {
         static void Main(string[] args)
@@ -134,9 +134,9 @@ namespace RefactoringGuru.DesignPatterns.Bridge.Conceptual
             // сконфигурированной комбинацией абстракции и реализации.
             abstraction = new Abstraction(new ConcreteImplementationA());
             client.ClientCode(abstraction);
-            
+
             Console.WriteLine();
-            
+
             abstraction = new ExtendedAbstraction(new ConcreteImplementationB());
             client.ClientCode(abstraction);
         }
